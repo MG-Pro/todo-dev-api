@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "node index.js",
-    "deploy": "git pull & npm run build & pm2 start /home/admin/nodeApps/todo-dev-api- --watch –disable-logs -f"
+    "start": "pm2 start /home/admin/nodeApps/todo-dev-api --watch –disable-logs -f"
   },
   "keywords": [],
   "author": "Mikhail Gladkikh",
