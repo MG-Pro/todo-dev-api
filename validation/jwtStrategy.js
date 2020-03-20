@@ -10,15 +10,12 @@ opts.secretOrKey = 'secret'
 
 module.exports = passport => {
   passport.use(
-    new JWTStrategy(opts, (jwtPayload, done) => {
-      User.findById(jwtPayload.id)
-        .then(user => {
-          if (user) {
-            return done(null, user)
-          }
-          return done(null, false)
-        })
-        .catch(err => console.error(err))
+    new JWTStrategy(opts, async (jwtPayload, done) => {
+      const user = await User.findById(jwtPayload.id)
+      if (user) {
+        return done(null, user)
+      }
+      return done(null, false)
     })
   )
 }
