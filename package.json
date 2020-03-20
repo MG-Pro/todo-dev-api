@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
-    "start": "pm2 start /home/admin/nodeApps/todo-dev-api --watch –disable-logs -f"
+    "start": "pm2 start index.js --watch –disable-logs -f"
   },
   "keywords": [],
   "author": "Mikhail Gladkikh",
@@ -18,7 +18,8 @@
     "yargs": "^15.3.1",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "pm2": "^4.2.3"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
