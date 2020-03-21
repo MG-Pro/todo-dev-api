@@ -5,6 +5,8 @@ const passport = require('passport')
 const helpers = require('./routes/helpers')
 const users = require('./routes/user')
 const tasks = require('./routes/tasks')
+const stub = require('./routes/stub')
+
 const jwtStrategy = require('./validation/jwtStrategy')
 
 const app = express()
@@ -30,6 +32,7 @@ jwtStrategy(passport)
 app.use('/api/users', users)
 app.use('/api/tasks', tasks)
 app.use('/api/helpers', helpers)
+app.use('/', stub)
 
 app.listen(port, () => {
   console.log(`Server start on port ${port}!`)
